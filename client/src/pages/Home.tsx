@@ -90,17 +90,19 @@ export default function Home() {
 
       {/* Stats Section (Floating) */}
       <div className="container mx-auto px-4 -mt-16 relative z-30">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-2xl shadow-xl p-8 border border-border">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white rounded-2xl shadow-xl p-8 border border-border">
           {[
             { icon: Clock, label: "Years Experience", value: "8+" },
             { icon: Heart, label: "Happy Clients", value: "200+" },
             { icon: Award, label: "Certified", value: "Pro" },
             { icon: Star, label: "Rating", value: "4.9" },
           ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <stat.icon className="w-8 h-8 text-accent mx-auto mb-2" />
-              <div className="text-2xl font-bold font-serif text-foreground">{stat.value}</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wide">{stat.label}</div>
+            <div key={i} className="flex flex-col items-center justify-center text-center">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+                <stat.icon className="w-6 h-6 text-accent" />
+              </div>
+              <div className="text-2xl font-bold font-serif text-foreground leading-none mb-1">{stat.value}</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest font-semibold">{stat.label}</div>
             </div>
           ))}
         </div>

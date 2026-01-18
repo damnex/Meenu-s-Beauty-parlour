@@ -276,7 +276,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold mb-2">Visit Us</h4>
                   <p className="text-muted-foreground">
                     123 Beauty Lane, Near City Center,<br />
-                    Tirunelveli, Tamil Nadu, India.
+                    Cuddalore, Tamil Nadu, India.
                   </p>
                 </div>
               </div>
@@ -333,7 +333,7 @@ export default function Home() {
       <footer className="bg-foreground text-white py-12 border-t border-white/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl font-bold mb-2">Meenu's</h2>
-          <p className="text-white/60 text-sm mb-8">Beauty Parlour • Tirunelveli</p>
+          <p className="text-white/60 text-sm mb-8">Beauty Parlour • Cuddalore</p>
           <div className="h-px w-24 bg-white/20 mx-auto mb-8" />
           <p className="text-white/40 text-sm">
             © 2026 Meenu's Beauty Parlour. All rights reserved. <br />

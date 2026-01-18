@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section (Floating) */}
-      <div className="container mx-auto px-4 -mt-16 relative z-30">
+      <div className="container mx-auto px-4 mt-12 relative z-30">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white rounded-2xl shadow-xl p-8 border border-border">
           {[
             { icon: Clock, label: "Years Experience", value: "8+" },

@@ -337,7 +337,8 @@ export default function Home() {
           <div className="h-px w-24 bg-white/20 mx-auto mb-8" />
           <p className="text-white/40 text-sm">
             © 2026 Meenu's Beauty Parlour. All rights reserved. <br />
-            Designed with <Heart className="w-3 h-3 inline text-primary mx-1" /> for Beauty.
+            Designed with <Heart className="w-3 h-3 inline text-primary mx-1" /> for Beauty. <br />
+            <span className="mt-2 block">Built by <a href="https://www.linkedin.com/in/dheenadhayalan-muruganantham/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors font-medium">Damnex</a></span>
           </p>
         </div>
       </footer>

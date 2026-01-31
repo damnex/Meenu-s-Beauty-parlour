@@ -6,16 +6,18 @@ interface ServiceCardProps {
   description?: string;
   price?: string;
   delay?: number;
+  onClick?: () => void;
 }
 
-export function ServiceCard({ title, description, price, delay = 0 }: ServiceCardProps) {
+export function ServiceCard({ title, description, price, delay = 0, onClick }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
       viewport={{ once: true }}
-      className="bg-white p-6 rounded-2xl shadow-lg border border-primary/10 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group"
+      onClick={onClick}
+      className="bg-white p-6 rounded-2xl shadow-lg border border-primary/10 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group cursor-pointer"
     >
       <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
         <Check className="w-5 h-5 text-accent-foreground" />

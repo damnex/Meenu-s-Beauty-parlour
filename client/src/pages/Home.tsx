@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Instagram, Star, Clock, Heart, Award } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// Import local assets or use placeholders
 import artistImage from "@assets/stock_images/professional_indian__d080ebb3.jpg";
 import bridalImage from "@assets/stock_images/indian_bridal_makeup_8096a08a.jpg";
 import facialImage from "@assets/stock_images/facial_spa_treatment_b2476ffb.jpg";
@@ -15,15 +14,17 @@ import hairImage from "@assets/stock_images/indian_hairstyle_bra_9d459492.jpg";
 import mehandiImage from "@assets/stock_images/beautiful_mehandi_de_54fa2cc8.jpg";
 
 export default function Home() {
+  const [activeGalleryTab, setActiveGalleryTab] = useState("beautician");
+
   const services = [
-    { title: "Beautician Makeup", desc: "Professional full-face makeup for any occasion." },
-    { title: "Waterproof Makeup", desc: "Long-lasting, sweat-proof makeup ideal for events." },
-    { title: "Hairdo & Styling", desc: "Intricate braids, buns, and modern hairstyles." },
-    { title: "Glossy Makeup", desc: "Radiant, dewy finish for a youthful glow." },
-    { title: "Skin Finish Makeup", desc: "Natural, 'no-makeup' makeup look." },
-    { title: "Saree Draping", desc: "Perfect pleats for all regional saree styles." },
-    { title: "Kids Variety Makeup", desc: "Gentle, fun styling for school events and parties." },
-    { title: "Mehandi Art", desc: "Traditional and arabic designs for hands and feet." },
+    { id: "beautician", title: "Beautician Makeup", desc: "Professional full-face makeup for any occasion." },
+    { id: "waterproof", title: "Waterproof Makeup", desc: "Long-lasting, sweat-proof makeup ideal for events." },
+    { id: "hairdo", title: "Hairdo", desc: "Intricate braids, buns, and modern hairstyles." },
+    { id: "glossy", title: "Glossy Makeup", desc: "Radiant, dewy finish for a youthful glow." },
+    { id: "skinfinish", title: "Skin Finish Makeup", desc: "Natural, 'no-makeup' makeup look." },
+    { id: "saree", title: "Saree Draping", desc: "Perfect pleats for all regional saree styles." },
+    { id: "kids", title: "Kids Variety Makeup", desc: "Gentle, fun styling for school events and parties." },
+    { id: "mehandi", title: "Mehandi Preparation", desc: "Traditional and arabic designs for hands and feet." },
   ];
 
   const offers = [
@@ -33,11 +34,23 @@ export default function Home() {
   ];
 
   const galleryCategories = [
-    { id: "bridal", label: "Bridal", img: bridalImage },
-    { id: "facial", label: "Facial", img: facialImage },
-    { id: "hair", label: "Hairstyle", img: hairImage },
-    { id: "mehandi", label: "Mehandi", img: mehandiImage },
+    { id: "beautician", label: "Beautician Makeup", img: bridalImage },
+    { id: "waterproof", label: "Waterproof Makeup", img: facialImage },
+    { id: "hairdo", label: "Hairdo", img: hairImage },
+    { id: "glossy", label: "Glossy Makeup", img: bridalImage },
+    { id: "skinfinish", label: "Skin Finish Makeup", img: facialImage },
+    { id: "saree", label: "Saree Draping", img: bridalImage },
+    { id: "kids", label: "Kids Variety Makeup", img: facialImage },
+    { id: "mehandi", label: "Mehandi Preparation", img: mehandiImage },
   ];
+
+  const handleServiceClick = (serviceId: string) => {
+    setActiveGalleryTab(serviceId);
+    const gallerySection = document.getElementById("gallery");
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
@@ -160,10 +173,11 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <ServiceCard
-                key={index}
+                key={service.id}
                 title={service.title}
                 description={service.desc}
                 delay={index}
+                onClick={() => handleServiceClick(service.id)}
               />
             ))}
           </div>
@@ -181,23 +195,25 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <SectionHeading subtitle="Portfolio" title="Our Recent Works" />
           
-          <Tabs defaultValue="bridal" className="w-full max-w-5xl mx-auto">
-            <TabsList className="grid w-full grid-cols-4 mb-12 h-auto p-1 bg-white rounded-full border shadow-sm">
-              {galleryCategories.map((cat) => (
-                <TabsTrigger
-                  key={cat.id}
-                  value={cat.id}
-                  className="rounded-full py-3 data-[state=active]:bg-primary data-[state=active]:text-white font-medium transition-all"
-                >
-                  {cat.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          <Tabs value={activeGalleryTab} onValueChange={setActiveGalleryTab} className="w-full max-w-6xl mx-auto">
+            <div className="overflow-x-auto pb-4 mb-8">
+              <TabsList className="inline-flex w-max gap-2 p-2 bg-white rounded-2xl border shadow-sm">
+                {galleryCategories.map((cat) => (
+                  <TabsTrigger
+                    key={cat.id}
+                    value={cat.id}
+                    data-testid={`tab-gallery-${cat.id}`}
+                    className="rounded-full px-4 py-2 whitespace-nowrap data-[state=active]:bg-primary data-[state=active]:text-white font-medium transition-all text-sm"
+                  >
+                    {cat.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
             
             {galleryCategories.map((cat) => (
               <TabsContent key={cat.id} value={cat.id} className="mt-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Generate multiple placeholder cards per category */}
                   {[1, 2, 3].map((item) => (
                     <motion.div
                       key={item}
@@ -205,15 +221,19 @@ export default function Home() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4 }}
                       className="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg cursor-pointer"
+                      data-testid={`gallery-item-${cat.id}-${item}`}
                     >
                       <img
                         src={cat.img}
                         alt={`${cat.label} ${item}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end pb-8">
+                        <h4 className="text-white font-serif text-xl font-bold mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          {cat.label}
+                        </h4>
                         <BookingModal defaultService={cat.label} trigger={
-                          <button className="bg-white text-black px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          <button className="bg-white text-black px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                             Book This Look
                           </button>
                         } />

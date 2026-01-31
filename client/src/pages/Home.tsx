@@ -218,7 +218,7 @@ export default function Home() {
                   <ChevronRight className="w-4 h-4 animate-pulse" />
                 </div>
               </div>
-              <div className="overflow-x-auto pb-4 scrollbar-hide">
+              <div className="overflow-x-auto pb-4 scroll-smooth">
                 <TabsList className="inline-flex w-max gap-2 p-2 bg-white rounded-2xl border shadow-sm mx-8">
                   {galleryCategories.map((cat) => (
                     <TabsTrigger
@@ -351,7 +351,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="text-xl font-serif font-bold mb-2">Follow Us</h4>
-                  <a href="#" className="text-primary hover:underline">@meenus_beauty</a>
+                  <a href="https://www.instagram.com/meenus_beauty" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@meenus_beauty</a>
                 </div>
               </div>
             </div>

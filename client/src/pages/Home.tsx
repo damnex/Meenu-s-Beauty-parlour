@@ -4,7 +4,7 @@ import { BookingModal } from "@/components/BookingModal";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Instagram, Star, Clock, Heart, Award } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Star, Clock, Heart, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import artistImage from "@assets/stock_images/professional_indian__d080ebb3.jpg";
@@ -12,6 +12,15 @@ import bridalImage from "@assets/stock_images/indian_bridal_makeup_8096a08a.jpg"
 import facialImage from "@assets/stock_images/facial_spa_treatment_b2476ffb.jpg";
 import hairImage from "@assets/stock_images/indian_hairstyle_bra_9d459492.jpg";
 import mehandiImage from "@assets/stock_images/beautiful_mehandi_de_54fa2cc8.jpg";
+
+import beauticianImg from "@assets/stock_images/gallery_01_beautician_makeup.png";
+import waterproofImg from "@assets/stock_images/gallery_02_waterproof_makeup.png";
+import hairdoImg from "@assets/stock_images/gallery_03_hairdo.png";
+import glossyImg from "@assets/stock_images/gallery_04_glossy_makeup.png";
+import skinFinishImg from "@assets/stock_images/gallery_05_skin_finish.png";
+import sareeImg from "@assets/stock_images/gallery_06_saree_draping.png";
+import kidsImg from "@assets/stock_images/gallery_07_kids_makeup.png";
+import mehandiGalleryImg from "@assets/stock_images/gallery_08_mehandi.png";
 
 export default function Home() {
   const [activeGalleryTab, setActiveGalleryTab] = useState("beautician");
@@ -34,14 +43,14 @@ export default function Home() {
   ];
 
   const galleryCategories = [
-    { id: "beautician", label: "Beautician Makeup", img: bridalImage },
-    { id: "waterproof", label: "Waterproof Makeup", img: facialImage },
-    { id: "hairdo", label: "Hairdo", img: hairImage },
-    { id: "glossy", label: "Glossy Makeup", img: bridalImage },
-    { id: "skinfinish", label: "Skin Finish Makeup", img: facialImage },
-    { id: "saree", label: "Saree Draping", img: bridalImage },
-    { id: "kids", label: "Kids Variety Makeup", img: facialImage },
-    { id: "mehandi", label: "Mehandi Preparation", img: mehandiImage },
+    { id: "beautician", label: "Beautician Makeup", img: beauticianImg },
+    { id: "waterproof", label: "Waterproof Makeup", img: waterproofImg },
+    { id: "hairdo", label: "Hairdo", img: hairdoImg },
+    { id: "glossy", label: "Glossy Makeup", img: glossyImg },
+    { id: "skinfinish", label: "Skin Finish Makeup", img: skinFinishImg },
+    { id: "saree", label: "Saree Draping", img: sareeImg },
+    { id: "kids", label: "Kids Variety Makeup", img: kidsImg },
+    { id: "mehandi", label: "Mehandi Preparation", img: mehandiGalleryImg },
   ];
 
   const handleServiceClick = (serviceId: string) => {
@@ -196,19 +205,33 @@ export default function Home() {
           <SectionHeading subtitle="Portfolio" title="Our Recent Works" />
           
           <Tabs value={activeGalleryTab} onValueChange={setActiveGalleryTab} className="w-full max-w-6xl mx-auto">
-            <div className="overflow-x-auto pb-4 mb-8">
-              <TabsList className="inline-flex w-max gap-2 p-2 bg-white rounded-2xl border shadow-sm">
-                {galleryCategories.map((cat) => (
-                  <TabsTrigger
-                    key={cat.id}
-                    value={cat.id}
-                    data-testid={`tab-gallery-${cat.id}`}
-                    className="rounded-full px-4 py-2 whitespace-nowrap data-[state=active]:bg-primary data-[state=active]:text-white font-medium transition-all text-sm"
-                  >
-                    {cat.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
+            <div className="relative mb-8">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+                <div className="flex items-center gap-1 text-muted-foreground bg-gradient-to-r from-background via-background to-transparent pr-8 py-2">
+                  <ChevronLeft className="w-4 h-4 animate-pulse" />
+                  <span className="text-xs font-medium hidden sm:inline">Swipe</span>
+                </div>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+                <div className="flex items-center gap-1 text-muted-foreground bg-gradient-to-l from-background via-background to-transparent pl-8 py-2">
+                  <span className="text-xs font-medium hidden sm:inline">Swipe</span>
+                  <ChevronRight className="w-4 h-4 animate-pulse" />
+                </div>
+              </div>
+              <div className="overflow-x-auto pb-4 scrollbar-hide">
+                <TabsList className="inline-flex w-max gap-2 p-2 bg-white rounded-2xl border shadow-sm mx-8">
+                  {galleryCategories.map((cat) => (
+                    <TabsTrigger
+                      key={cat.id}
+                      value={cat.id}
+                      data-testid={`tab-gallery-${cat.id}`}
+                      className="rounded-full px-4 py-2 whitespace-nowrap data-[state=active]:bg-primary data-[state=active]:text-white font-medium transition-all text-sm"
+                    >
+                      {cat.label}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
             </div>
             
             {galleryCategories.map((cat) => (

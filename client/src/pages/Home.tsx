@@ -206,18 +206,6 @@ export default function Home() {
           
           <Tabs value={activeGalleryTab} onValueChange={setActiveGalleryTab} className="w-full max-w-6xl mx-auto">
             <div className="relative mb-8">
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                <div className="flex items-center gap-1 text-muted-foreground bg-gradient-to-r from-background via-background to-transparent pr-8 py-2">
-                  <ChevronLeft className="w-4 h-4 animate-pulse" />
-                  <span className="text-xs font-medium hidden sm:inline">Swipe</span>
-                </div>
-              </div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                <div className="flex items-center gap-1 text-muted-foreground bg-gradient-to-l from-background via-background to-transparent pl-8 py-2">
-                  <span className="text-xs font-medium hidden sm:inline">Swipe</span>
-                  <ChevronRight className="w-4 h-4 animate-pulse" />
-                </div>
-              </div>
               <div className="overflow-x-auto pb-4 scroll-smooth">
                 <TabsList className="inline-flex w-max gap-2 p-2 bg-white rounded-2xl border shadow-sm mx-8">
                   {galleryCategories.map((cat) => (

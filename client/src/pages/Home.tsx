@@ -34,7 +34,7 @@ import mehandi1 from "@/assets/gallery/mehandi/1.png";
 import mehandi2 from "@/assets/gallery/mehandi/2.png";
 import mehandi3 from "@/assets/gallery/mehandi/3.png";
 
-import meenuArtist from "@/assets/meenu-artist.jpg";
+import meenuArtist from "@/assets/meenu-artist.png";
 
 export default function Home() {
   const [activeGalleryTab, setActiveGalleryTab] = useState("beautician");

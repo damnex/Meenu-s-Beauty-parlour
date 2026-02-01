@@ -7,20 +7,8 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Instagram, Star, Clock, Heart, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import artistImage from "@assets/stock_images/professional_indian__d080ebb3.jpg";
 import bridalImage from "@/assets/hero_bridal.png";
-import facialImage from "@assets/stock_images/facial_spa_treatment_b2476ffb.jpg";
-import hairImage from "@assets/stock_images/indian_hairstyle_bra_9d459492.jpg";
-import mehandiImage from "@assets/stock_images/beautiful_mehandi_de_54fa2cc8.jpg";
-
-import beauticianImg from "@assets/stock_images/gallery_01_beautician_makeup.png";
-import waterproofImg from "@assets/stock_images/gallery_02_waterproof_makeup.png";
-import hairdoImg from "@assets/stock_images/gallery_03_hairdo.png";
-import glossyImg from "@assets/stock_images/gallery_04_glossy_makeup.png";
-import skinFinishImg from "@assets/stock_images/gallery_05_skin_finish.png";
-import sareeImg from "@assets/stock_images/gallery_06_saree_draping.png";
-import kidsImg from "@assets/stock_images/gallery_07_kids_makeup.png";
-import mehandiGalleryImg from "@assets/stock_images/gallery_08_mehandi.png";
+import mehandiGalleryImg from "@/assets/hero_bridal.png";
 
 export default function Home() {
   const [activeGalleryTab, setActiveGalleryTab] = useState("beautician");
@@ -43,13 +31,13 @@ export default function Home() {
   ];
 
   const galleryCategories = [
-    { id: "beautician", label: "Beautician Makeup", img: beauticianImg },
-    { id: "waterproof", label: "Waterproof Makeup", img: waterproofImg },
-    { id: "hairdo", label: "Hairdo", img: hairdoImg },
-    { id: "glossy", label: "Glossy Makeup", img: glossyImg },
-    { id: "skinfinish", label: "Skin Finish Makeup", img: skinFinishImg },
-    { id: "saree", label: "Saree Draping", img: sareeImg },
-    { id: "kids", label: "Kids Variety Makeup", img: kidsImg },
+    { id: "beautician", label: "Beautician Makeup", img: mehandiGalleryImg },
+    { id: "waterproof", label: "Waterproof Makeup", img: mehandiGalleryImg },
+    { id: "hairdo", label: "Hairdo", img: mehandiGalleryImg },
+    { id: "glossy", label: "Glossy Makeup", img: mehandiGalleryImg },
+    { id: "skinfinish", label: "Skin Finish Makeup", img: mehandiGalleryImg },
+    { id: "saree", label: "Saree Draping", img: mehandiGalleryImg },
+    { id: "kids", label: "Kids Variety Makeup", img: mehandiGalleryImg },
     { id: "mehandi", label: "Mehandi Preparation", img: mehandiGalleryImg },
   ];
 
@@ -153,11 +141,9 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-3 scale-105" />
-              <img
-                src={artistImage}
-                alt="Meenu - Makeup Artist"
-                className="relative rounded-3xl shadow-2xl w-full aspect-[3/4] object-cover"
-              />
+              <div className="relative rounded-3xl shadow-2xl w-full aspect-[3/4] bg-accent/20 flex items-center justify-center">
+                <Heart className="w-12 h-12 text-primary/40" />
+              </div>
             </motion.div>
             
             <motion.div

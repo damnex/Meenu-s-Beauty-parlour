@@ -53,6 +53,17 @@ export default function Home() {
     { id: "mehandi", label: "Mehandi Preparation", img: mehandiGalleryImg },
   ];
 
+  const galleryImages: Record<string, string[]> = {
+    beautician: ["/src/assets/gallery/beautician/1.png", "/src/assets/gallery/beautician/2.png", "/src/assets/gallery/beautician/3.png"],
+    waterproof: ["/src/assets/gallery/waterproof/1.png", "/src/assets/gallery/waterproof/2.png", "/src/assets/gallery/waterproof/3.png"],
+    hairdo: ["/src/assets/gallery/hairdo/1.png", "/src/assets/gallery/hairdo/2.png", "/src/assets/gallery/hairdo/3.png"],
+    glossy: ["/src/assets/gallery/glossy/1.png", "/src/assets/gallery/glossy/2.png", "/src/assets/gallery/glossy/3.png"],
+    skinfinish: ["/src/assets/gallery/skinfinish/1.png", "/src/assets/gallery/skinfinish/2.png", "/src/assets/gallery/skinfinish/3.png"],
+    saree: ["/src/assets/gallery/saree/1.png", "/src/assets/gallery/saree/2.png", "/src/assets/gallery/saree/3.png"],
+    kids: ["/src/assets/gallery/kids/1.png", "/src/assets/gallery/kids/2.png", "/src/assets/gallery/kids/3.png"],
+    mehandi: ["/src/assets/gallery/mehandi/1.png", "/src/assets/gallery/mehandi/2.png", "/src/assets/gallery/mehandi/3.png"],
+  };
+
   const handleServiceClick = (serviceId: string) => {
     setActiveGalleryTab(serviceId);
     const gallerySection = document.getElementById("gallery");
@@ -225,18 +236,18 @@ export default function Home() {
             {galleryCategories.map((cat) => (
               <TabsContent key={cat.id} value={cat.id} className="mt-0">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[1, 2, 3].map((item) => (
+                  {galleryImages[cat.id]?.map((imgSrc, index) => (
                     <motion.div
-                      key={item}
+                      key={index}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.4 }}
                       className="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg cursor-pointer"
-                      data-testid={`gallery-item-${cat.id}-${item}`}
+                      data-testid={`gallery-item-${cat.id}-${index + 1}`}
                     >
                       <img
-                        src={cat.img}
-                        alt={`${cat.label} ${item}`}
+                        src={imgSrc}
+                        alt={`${cat.label} ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end pb-8">

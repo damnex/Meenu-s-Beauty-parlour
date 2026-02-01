@@ -3,3 +3,4 @@
 [x] 3. Verify the project is working using the feedback tool
 [x] 4. Inform user the import is completed and they can start building, mark the import as completed using the complete_project_import tool
 [x] 5. Replace hero image to remove whitespace below photo
+[x] 6. Add left and right margins for all text content and buttons (not containers)

@@ -82,20 +82,20 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="font-script text-4xl md:text-5xl text-primary block mb-4">
+              <span className="font-script text-4xl md:text-5xl text-primary block mb-4 px-4 md:px-6">
                 Welcome to
               </span>
-              <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground leading-tight mb-6">
+              <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground leading-tight mb-6 px-4 md:px-6">
                 Meenu's <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                   Beauty Parlour
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-lg leading-relaxed">
+              <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-lg leading-relaxed px-4 md:px-6">
                 Enhancing Your Natural Beauty with Tradition & Care. Step into a world of elegance and let us transform you for your special day.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 px-4 md:px-6">
                 <BookingModal />
                 <a
                   href="#services"
@@ -122,8 +122,8 @@ export default function Home() {
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-3">
                 <stat.icon className="w-6 h-6 text-accent" />
               </div>
-              <div className="text-2xl font-bold font-serif text-foreground leading-none mb-1">{stat.value}</div>
-              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest font-semibold">{stat.label}</div>
+              <div className="text-2xl font-bold font-serif text-foreground leading-none mb-1 px-2">{stat.value}</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest font-semibold px-2">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -153,13 +153,13 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <SectionHeading align="left" subtitle="Meet the Artist" title="Artistry with Passion" />
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed px-4 md:px-6">
                 Hi, I'm Meenu. With over 8 years of experience in the beauty industry, I have had the privilege of transforming over 200 beautiful souls for their most cherished moments.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed px-4 md:px-6">
                 My approach is personal and friendly. I believe makeup shouldn't hide you, but reveal the most confident version of yourself. Whether it's a traditional bridal look or a chic party style, I pour my heart into every brushstroke.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 px-4 md:px-6">
                 <BookingModal trigger={
                   <button className="text-primary font-semibold border-b-2 border-primary hover:text-primary/80 transition-colors">
                     Book an Appointment
@@ -189,7 +189,7 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-muted-foreground italic mb-6">
+            <p className="text-muted-foreground italic mb-6 px-4 md:px-6">
               * Custom packages available for events and weddings.
             </p>
           </div>
@@ -274,8 +274,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 text-primary font-bold text-2xl shadow-lg">
                   %
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-4">{offer.title}</h3>
-                <p className="text-white/80 mb-6">{offer.desc}</p>
+                <h3 className="text-2xl font-serif font-bold mb-4 px-2">{offer.title}</h3>
+                <p className="text-white/80 mb-6 px-4">{offer.desc}</p>
                 <BookingModal />
               </motion.div>
             ))}
@@ -301,8 +301,8 @@ export default function Home() {
                   <MapPin />
                 </div>
                 <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">Visit Us</h4>
-                  <p className="text-muted-foreground">
+                  <h4 className="text-xl font-serif font-bold mb-2 px-2">Visit Us</h4>
+                  <p className="text-muted-foreground px-2">
                     123 Beauty Lane, Near City Center,<br />
                     Cuddalore, Tamil Nadu, India.
                   </p>
@@ -314,9 +314,9 @@ export default function Home() {
                   <Phone />
                 </div>
                 <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">Call Us</h4>
-                  <p className="text-muted-foreground font-mono">+91 95143 31529</p>
-                  <p className="text-sm text-muted-foreground mt-1">Available 9:00 AM - 8:00 PM</p>
+                  <h4 className="text-xl font-serif font-bold mb-2 px-2">Call Us</h4>
+                  <p className="text-muted-foreground font-mono px-2">+91 95143 31529</p>
+                  <p className="text-sm text-muted-foreground mt-1 px-2">Available 9:00 AM - 8:00 PM</p>
                 </div>
               </div>
 
@@ -325,8 +325,8 @@ export default function Home() {
                   <Mail />
                 </div>
                 <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">Email</h4>
-                  <p className="text-muted-foreground break-all">Meenambigaimeenambigai141@gmail.com</p>
+                  <h4 className="text-xl font-serif font-bold mb-2 px-2">Email</h4>
+                  <p className="text-muted-foreground break-all px-2">Meenambigaimeenambigai141@gmail.com</p>
                 </div>
               </div>
 
@@ -335,8 +335,8 @@ export default function Home() {
                   <Instagram />
                 </div>
                 <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">Follow Us</h4>
-                  <a href="https://www.instagram.com/meenus_beauty" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@meenus_beauty</a>
+                  <h4 className="text-xl font-serif font-bold mb-2 px-2">Follow Us</h4>
+                  <a href="https://www.instagram.com/meenus_beauty" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline px-2">@meenus_beauty</a>
                 </div>
               </div>
             </div>
@@ -360,10 +360,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-12 border-t border-white/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl font-bold mb-2">Meenu's</h2>
-          <p className="text-white/60 text-sm mb-8">Beauty Parlour • Cuddalore</p>
+          <h2 className="font-serif text-3xl font-bold mb-2 px-4">Meenu's</h2>
+          <p className="text-white/60 text-sm mb-8 px-4">Beauty Parlour • Cuddalore</p>
           <div className="h-px w-24 bg-white/20 mx-auto mb-8" />
-          <p className="text-white/40 text-sm">
+          <p className="text-white/40 text-sm px-4">
             © 2026 Meenu's Beauty Parlour. All rights reserved. <br />
             Designed with <Heart className="w-3 h-3 inline text-primary mx-1" /> for Beauty. <br />
             <span className="mt-2 block">Built by <a href="https://www.linkedin.com/in/dheenadhayalan-muruganantham/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors font-medium">Damnex</a></span>

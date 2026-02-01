@@ -14,10 +14,10 @@ export function SectionHeading({ subtitle, title, align = "center", light = fals
 
   return (
     <div className={`max-w-3xl mb-12 ${alignmentClasses[align]}`}>
-      <span className={`block font-script text-2xl mb-2 ${light ? "text-primary-foreground/90" : "text-primary"}`}>
+      <span className={`block font-script text-2xl mb-2 px-4 md:px-6 ${light ? "text-primary-foreground/90" : "text-primary"}`}>
         {subtitle}
       </span>
-      <h2 className={`text-4xl md:text-5xl font-serif font-bold ${light ? "text-white" : "text-foreground"}`}>
+      <h2 className={`text-4xl md:text-5xl font-serif font-bold px-4 md:px-6 ${light ? "text-white" : "text-foreground"}`}>
         {title}
       </h2>
       <div className={`h-1 w-24 bg-accent mt-4 rounded-full ${align === "center" ? "mx-auto" : ""}`} />

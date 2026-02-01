@@ -34,7 +34,7 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 px-4 md:px-6">
            <img 
             src={logo} 
             alt="Meenu's Beauty Parlour" 
@@ -51,7 +51,7 @@ export function Navigation() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8 px-4 md:px-6">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.name}
@@ -77,7 +77,7 @@ export function Navigation() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-foreground mx-4"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}
@@ -93,7 +93,7 @@ export function Navigation() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t"
           >
-            <nav className="flex flex-col p-4 space-y-4">
+            <nav className="flex flex-col p-4 px-8 space-y-4">
               {navLinks.map((link) => (
                 <ScrollLink
                   key={link.name}

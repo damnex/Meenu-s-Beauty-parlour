@@ -8,7 +8,31 @@ import { MapPin, Phone, Mail, Instagram, Star, Clock, Heart, Award, ChevronLeft,
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import bridalImage from "@/assets/hero_bridal.png";
-import mehandiGalleryImg from "@/assets/hero_bridal.png";
+
+import beautician1 from "@/assets/gallery/beautician/1.png";
+import beautician2 from "@/assets/gallery/beautician/2.png";
+import beautician3 from "@/assets/gallery/beautician/3.png";
+import waterproof1 from "@/assets/gallery/waterproof/1.png";
+import waterproof2 from "@/assets/gallery/waterproof/2.png";
+import waterproof3 from "@/assets/gallery/waterproof/3.png";
+import hairdo1 from "@/assets/gallery/hairdo/1.png";
+import hairdo2 from "@/assets/gallery/hairdo/2.png";
+import hairdo3 from "@/assets/gallery/hairdo/3.png";
+import glossy1 from "@/assets/gallery/glossy/1.png";
+import glossy2 from "@/assets/gallery/glossy/2.png";
+import glossy3 from "@/assets/gallery/glossy/3.png";
+import skinfinish1 from "@/assets/gallery/skinfinish/1.png";
+import skinfinish2 from "@/assets/gallery/skinfinish/2.png";
+import skinfinish3 from "@/assets/gallery/skinfinish/3.png";
+import saree1 from "@/assets/gallery/saree/1.png";
+import saree2 from "@/assets/gallery/saree/2.png";
+import saree3 from "@/assets/gallery/saree/3.png";
+import kids1 from "@/assets/gallery/kids/1.png";
+import kids2 from "@/assets/gallery/kids/2.png";
+import kids3 from "@/assets/gallery/kids/3.png";
+import mehandi1 from "@/assets/gallery/mehandi/1.png";
+import mehandi2 from "@/assets/gallery/mehandi/2.png";
+import mehandi3 from "@/assets/gallery/mehandi/3.png";
 
 export default function Home() {
   const [activeGalleryTab, setActiveGalleryTab] = useState("beautician");
@@ -31,25 +55,25 @@ export default function Home() {
   ];
 
   const galleryCategories = [
-    { id: "beautician", label: "Beautician Makeup", img: mehandiGalleryImg },
-    { id: "waterproof", label: "Waterproof Makeup", img: mehandiGalleryImg },
-    { id: "hairdo", label: "Hairdo", img: mehandiGalleryImg },
-    { id: "glossy", label: "Glossy Makeup", img: mehandiGalleryImg },
-    { id: "skinfinish", label: "Skin Finish Makeup", img: mehandiGalleryImg },
-    { id: "saree", label: "Saree Draping", img: mehandiGalleryImg },
-    { id: "kids", label: "Kids Variety Makeup", img: mehandiGalleryImg },
-    { id: "mehandi", label: "Mehandi Preparation", img: mehandiGalleryImg },
+    { id: "beautician", label: "Beautician Makeup" },
+    { id: "waterproof", label: "Waterproof Makeup" },
+    { id: "hairdo", label: "Hairdo" },
+    { id: "glossy", label: "Glossy Makeup" },
+    { id: "skinfinish", label: "Skin Finish Makeup" },
+    { id: "saree", label: "Saree Draping" },
+    { id: "kids", label: "Kids Variety Makeup" },
+    { id: "mehandi", label: "Mehandi Preparation" },
   ];
 
   const galleryImages: Record<string, string[]> = {
-    beautician: ["/src/assets/gallery/beautician/1.png", "/src/assets/gallery/beautician/2.png", "/src/assets/gallery/beautician/3.png"],
-    waterproof: ["/src/assets/gallery/waterproof/1.png", "/src/assets/gallery/waterproof/2.png", "/src/assets/gallery/waterproof/3.png"],
-    hairdo: ["/src/assets/gallery/hairdo/1.png", "/src/assets/gallery/hairdo/2.png", "/src/assets/gallery/hairdo/3.png"],
-    glossy: ["/src/assets/gallery/glossy/1.png", "/src/assets/gallery/glossy/2.png", "/src/assets/gallery/glossy/3.png"],
-    skinfinish: ["/src/assets/gallery/skinfinish/1.png", "/src/assets/gallery/skinfinish/2.png", "/src/assets/gallery/skinfinish/3.png"],
-    saree: ["/src/assets/gallery/saree/1.png", "/src/assets/gallery/saree/2.png", "/src/assets/gallery/saree/3.png"],
-    kids: ["/src/assets/gallery/kids/1.png", "/src/assets/gallery/kids/2.png", "/src/assets/gallery/kids/3.png"],
-    mehandi: ["/src/assets/gallery/mehandi/1.png", "/src/assets/gallery/mehandi/2.png", "/src/assets/gallery/mehandi/3.png"],
+    beautician: [beautician1, beautician2, beautician3],
+    waterproof: [waterproof1, waterproof2, waterproof3],
+    hairdo: [hairdo1, hairdo2, hairdo3],
+    glossy: [glossy1, glossy2, glossy3],
+    skinfinish: [skinfinish1, skinfinish2, skinfinish3],
+    saree: [saree1, saree2, saree3],
+    kids: [kids1, kids2, kids3],
+    mehandi: [mehandi1, mehandi2, mehandi3],
   };
 
   const handleServiceClick = (serviceId: string) => {

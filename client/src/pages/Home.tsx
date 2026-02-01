@@ -8,7 +8,7 @@ import { MapPin, Phone, Mail, Instagram, Star, Clock, Heart, Award, ChevronLeft,
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import artistImage from "@assets/stock_images/professional_indian__d080ebb3.jpg";
-import bridalImage from "@assets/stock_images/indian_bridal_makeup_8096a08a.jpg";
+import bridalImage from "@/assets/hero_bridal.png";
 import facialImage from "@assets/stock_images/facial_spa_treatment_b2476ffb.jpg";
 import hairImage from "@assets/stock_images/indian_hairstyle_bra_9d459492.jpg";
 import mehandiImage from "@assets/stock_images/beautiful_mehandi_de_54fa2cc8.jpg";
@@ -66,13 +66,13 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20">
+      <section id="home" className="relative h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent z-10" />
           <img
             src={bridalImage}
             alt="Beautiful Indian Bride"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center scale-105"
           />
         </div>
 

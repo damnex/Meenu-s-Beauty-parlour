@@ -33,8 +33,8 @@ export function Navigation() {
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="flex items-center gap-2 px-4 md:px-6">
+      <div className="container-custom flex items-center justify-between">
+        <div className="flex items-center gap-2">
            <img 
             src={logo} 
             alt="Meenu's Beauty Parlour" 
@@ -51,7 +51,7 @@ export function Navigation() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 px-4 md:px-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.name}
@@ -77,7 +77,7 @@ export function Navigation() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground mx-4"
+          className="md:hidden p-2 text-foreground"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X /> : <Menu />}

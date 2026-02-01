@@ -1,9 +1,4 @@
-[x] 1. Install the required packages
-[x] 2. Restart the workflow to see if the project is working
-[x] 3. Verify the project is working using the feedback tool
-[x] 4. Inform user the import is completed and they can start building, mark the import as completed using the complete_project_import tool
-[x] 5. Replace hero image to remove whitespace below photo
-[x] 6. Add left and right margins for all text content and buttons (not containers)
-[x] 7. Add equal margins in the header navigation
-[x] 8. Fix gallery images bug - properly import images instead of using wrong paths
-[x] 9. Organize gallery section better
+[x] 1. Apply consistent horizontal margins using a reusable container class across all sections.
+[x] 2. Refactor Gallery section to use CSS Grid/Flexbox for responsive and professional alignment.
+[x] 3. Update gallery structure to ensure easy maintenance (image tags only, no hardcoded widths).
+[x] 4. Final styling polish for a minimal, clean, and professional look.

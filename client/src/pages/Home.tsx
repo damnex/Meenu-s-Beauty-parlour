@@ -66,7 +66,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section id="home" className="relative h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+      <section id="home" className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent z-10" />
           <img

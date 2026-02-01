@@ -379,7 +379,7 @@ export default function Home() {
               {/* Placeholder for Map - using an iframe for a generic location or specific if provided */}
               <iframe
                 title="Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.465492982823!2d77.7289!3d8.7366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNDQnMTEuOCJOIDc3wrA0Myw0NC4wIkU!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.2408496329147!2d79.49626321529486!3d11.536864600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a527bb85640189f%3A0xca5989eb3d2ae1a4!2s11.5368646%2C%2079.4983333!5e0!3m2!1sen!2sin!4v1706958656789!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

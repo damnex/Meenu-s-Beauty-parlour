@@ -76,6 +76,17 @@ export default function Home() {
     mehandi: [mehandi1, mehandi2, mehandi3],
   };
 
+  const galleryAltText: Record<string, string[]> = {
+    beautician: ["Elegant bridal makeup with traditional jewelry", "Close-up of professional eye makeup", "Full-face makeover for a special occasion"],
+    waterproof: ["Long-lasting makeup for rainy outdoor events", "Flawless waterproof bridal look", "Sweat-proof makeup for long ceremonies"],
+    hairdo: ["Intricate traditional Indian braid with flowers", "Modern elegant bun with accessories", "Stylish contemporary hair design"],
+    glossy: ["Radiant dewy finish for a natural glow", "High-shine editorial makeup look", "Soft glossy transformation"],
+    skinfinish: ["Natural no-makeup makeup look", "Seamless skin-perfecting finish", "Lightweight daily makeover"],
+    saree: ["Perfectly pleated traditional silk saree", "Elegant modern saree draping style", "Intricate saree pleats and pallu"],
+    kids: ["Gentle festive makeup for children", "Fun and colorful kids' styling", "Subtle makeup for school events"],
+    mehandi: ["Traditional mehandi design for hands", "Intricate Arabic mehandi patterns", "Full bridal mehandi preparation"],
+  };
+
   const handleServiceClick = (serviceId: string) => {
     setActiveGalleryTab(serviceId);
     const gallerySection = document.getElementById("gallery");
@@ -257,7 +268,7 @@ export default function Home() {
                     >
                       <img
                         src={imgSrc}
-                        alt={`${cat.label} ${index + 1}`}
+                        alt={galleryAltText[cat.id]?.[index] || `${cat.label} ${index + 1}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end pb-8">
                         <h4 className="text-white font-serif text-xl font-bold mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

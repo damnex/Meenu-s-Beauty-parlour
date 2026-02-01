@@ -34,6 +34,8 @@ import mehandi1 from "@/assets/gallery/mehandi/1.png";
 import mehandi2 from "@/assets/gallery/mehandi/2.png";
 import mehandi3 from "@/assets/gallery/mehandi/3.png";
 
+import meenuArtist from "@/assets/meenu-artist.jpg";
+
 export default function Home() {
   const [activeGalleryTab, setActiveGalleryTab] = useState("beautician");
 
@@ -176,8 +178,12 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-3 scale-105" />
-              <div className="relative rounded-3xl shadow-2xl w-full aspect-[3/4] bg-accent/20 flex items-center justify-center">
-                <Heart className="w-12 h-12 text-primary/40" />
+              <div className="relative rounded-3xl shadow-2xl w-full aspect-[3/4] overflow-hidden">
+                <img 
+                  src={meenuArtist} 
+                  alt="Meenu - Professional Beauty Artist" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
             

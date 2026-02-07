@@ -343,8 +343,10 @@ export default function Home() {
                 <div>
                   <h4 className="text-xl font-serif font-bold mb-2">Visit Us</h4>
                   <p className="text-muted-foreground">
-                    123 Beauty Lane, Near City Center,<br />
-                    Cuddalore, Tamil Nadu, India.
+                  6/421 keelpathi puthunagar, Church back side, <br />
+                  kuravankuppam post,
+                  Keelpathi, Cuddalore, <br />
+                  Tamilnadu, India.
                   </p>
                 </div>
               </div>
